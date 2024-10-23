@@ -281,7 +281,7 @@ restore
 */
 	
 
-	xxxx
+	
 *------------------------------------------------------------------------------*
 **# Pregunta 5: Opcional					
 *------------------------------------------------------------------------------*
@@ -305,6 +305,7 @@ restore
 	gen asistesec = 1 if asisteg == 1 & niveled == 3
 	gen asistesup = 1 if asisteg == 1 & niveled == 5
 	
+* Ingreso
 preserve
 	
 	* Contar el total de alumnos
@@ -323,4 +324,27 @@ preserve
 			label(2 "Proporción de estudiantes que asisten a secundaria") ///
 			label(3 "Proporción de estudiantes que asisten a superior") ///
 			position(6))
+	graph export "${outputs}/icpf_education.pdf", replace
+restore
+
+* Consumo
+preserve
+	
+	* Contar el total de alumnos
+	version 16: table deccpcf [w=pondera], ///
+		c(sum asistepri sum asistesec sum asistesup) row replace
+		
+	* Calculamos el share
+	gen shrpri = table1/table1[1]
+	gen shrsec = table2/table2[1]
+	gen shrsup = table3/table3[1]
+
+	*Graficamente
+	twoway connected shrpri shrsec shrsup deccpcf if deccpcf != ., ///
+	xlabel(1(1)10) xtitle("Decil de ingreso per cápita familiar") ///
+	legend(	label(1 "Proporción de estudiantes que asisten a primaria") ///
+			label(2 "Proporción de estudiantes que asisten a secundaria") ///
+			label(3 "Proporción de estudiantes que asisten a superior") ///
+			position(6))
+	graph export "${outputs}/ccpf_education.pdf", replace
 restore
