@@ -289,13 +289,84 @@ save `arg23', replace
 mat W = W_24, W_23
 drop _all
 svmat W 
-export excel using "${output}/matrix_indicadores.xlsx"
+export excel using "${output}/matrix_indicadores.xlsx", replace
 
 
+*----------------------- PUNTO 4
 
+* Armado de la Curva de Lorenz
 
+use "${data}/EPH_ind_T124", replace
 
+destring _all, replace
+destring ipcf, dpcomma replace
+keep if inrange(deccfr, 1, 10)
+drop if nro_hogar == 51 | nro_hogar == 71
 
+replace region = 2 if aglomerado == 32
+keep ipcf pondih region
+
+sort region ipcf
+by region: gen pop = sum(pondih)
+by region: gen shrpop = pop / pop[_N]
+by region: gen glorenz = sum(ipcf * pondih)
+by region: replace glorenz = glorenz / glorenz[_N]
+
+twoway (line glorenz shrpop if region == 1) ///
+       (line glorenz shrpop if region == 2) ///
+       (line shrpop shrpop), ///
+	   legend(label(1 "Partidos del GBA") label(2 "CABA")) ///
+       title("Curva de Lorenz - 2024") ///
+       name(Lorenz2024, replace)
+
+	   
+twoway (line glorenz shrpop if region == 41) ///
+       (line glorenz shrpop if region == 43) ///
+       (line shrpop shrpop), ///
+	   legend(label(1 "NEA") label(2 "Patagonia")) ///
+       title("Curva de Lorenz - 2024") ///
+       name(Lorenz2024_2, replace)
+
+use "${data}/EPH_ind_T123", replace
+
+destring _all, replace
+destring ipcf, dpcomma replace
+keep if inrange(deccfr, 1, 10)
+drop if nro_hogar == 51 | nro_hogar == 71
+
+replace region = 2 if aglomerado == 32
+keep ipcf pondih region
+
+local ipc23 = 1288.9
+local ipc24 = 4814.8
+
+gen ipcf23 = ipcf * `ipc24' / `ipc23'
+drop ipcf
+
+sort region ipcf23
+by region: gen pop = sum(pondih)
+by region: gen shrpop = pop / pop[_N]
+by region: gen glorenz = sum(ipcf23 * pondih)
+by region: replace glorenz = glorenz / glorenz[_N]
+
+twoway (line glorenz shrpop if region == 1) ///
+       (line glorenz shrpop if region == 2) ///
+       (line shrpop shrpop), ///
+	   legend(label(1 "Partidos del GBA") label(2 "CABA")) ///
+       title("Curva de Lorenz - 2023") ///
+       name(Lorenz2023, replace)
+
+	   
+twoway (line glorenz shrpop if region == 41) ///
+       (line glorenz shrpop if region == 43) ///
+       (line shrpop shrpop), ///
+	   legend(label(1 "NEA") label(2 "Patagonia")) ///
+       title("Curva de Lorenz - 2023") ///
+       name(Lorenz2023_2, replace)
+
+graph combine Lorenz2023 Lorenz2024
+
+graph combine Lorenz2023_2 Lorenz2024_2
 
 
 
