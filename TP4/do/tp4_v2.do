@@ -12,7 +12,7 @@
 	version 16
 *	Set working directory
 	
-	global cwd  	= "C:\Users\Emiliano\Documents\FCE - UNLP\Economia de la Distribucion\TP-Distribucion\TP4" 
+	global cwd  	= "D:\UNLP_Maeco\Distribucion\TP-Distribucion\TP4" 
 
 *	Globals
 
@@ -164,10 +164,12 @@ foreach i in 23 24 {
 
 merge 1:1 percentil using `percentil_arg23'
 gen chg = 100*(ipcf24/ipcf23 - 1)
-twoway line chg percentil if inrange(percentil, 5, 95), xlabel(#10)
+label var chg "Tasa de variación (%)"
+label var percentil "Percentil"
+twoway line chg percentil if inrange(percentil, 5, 95), xlabel(#10) title("Curva de incidencia del crecimiento: Q1 2023 - Q1 2024")
 
 // graph export "${graph}/cic_1.png", replace
-
+xxx
 
 *----------------------- PUNTO 3
 
