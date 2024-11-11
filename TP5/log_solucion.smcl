@@ -1,0 +1,802 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}D:\UNLP_Maeco\Distribucion\TP-Distribucion\TP5/log_solucion.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}11 Nov 2024, 20:10:36
+{txt}
+{com}. 
+. *------------------------------------------------------------------------------*
+. **# PREGUNTA 1                                          
+. *------------------------------------------------------------------------------*
+.         
+.         preserve
+{txt}
+{com}.                  version 16: table educ_max [w=f_calib3], c(mean ithpc) replace
+{txt}(frequency weights assumed)
+
+{hline 10}{c TT}{hline 12}
+EducaciónMáxima(padre/ma {c |}
+dre)      {c |}
+          {c |}
+          {c |} mean(ithpc)
+{hline 10}{c +}{hline 12}
+        0 {c |}    {res}2631.842
+     {txt}Prii {c |}    {res}3217.913
+     {txt}Pric {c |}    {res}4321.002
+     {txt}Seci {c |}    {res}4565.452
+     {txt}Secc {c |}    {res}5867.375
+     {txt}Supi {c |}    {res}6512.124
+     {txt}Supc {c |}     {res}7559.41
+{txt}{hline 10}{c BT}{hline 12}
+
+{com}.         restore
+{txt}
+{com}. 
+.         preserve
+{txt}
+{com}.                 version 16: table mujer educ_max [w=f_calib3], c(mean ithpc) replace
+{txt}(frequency weights assumed)
+
+{hline 10}{c TT}{hline 69}
+=1 si es  {c |}                    Educación Máxima (padre/madre)                   
+mujer     {c |}        0      Prii      Pric      Seci      Secc      Supi      Supc
+{hline 10}{c +}{hline 69}
+   Hombre {c |} {res}2770.375  3444.299  4560.158  4954.127  6170.864  8510.197  7834.688
+    {txt}Mujer {c |} {res}2509.781  3041.968  4119.266  4270.687  5591.159  4987.995   7314.08
+{txt}{hline 10}{c BT}{hline 69}
+
+{com}.         restore
+{txt}
+{com}. 
+.         preserve
+{txt}
+{com}.                 version 16: table etnia educ_max [w=f_calib3], c(mean ithpc) replace
+{txt}(frequency weights assumed)
+
+{hline 10}{c TT}{hline 69}
+=1 si es  {c |}
+descenden {c |}
+cia de    {c |}
+pueblo    {c |}
+indígena(originar {c |}
+io) o     {c |}
+afrodesce {c |}
+ndiente   {c |}                    Educación Máxima (padre/madre)                   
+          {c |}        0      Prii      Pric      Seci      Secc      Supi      Supc
+{hline 10}{c +}{hline 69}
+        0 {c |} {res}2719.155  3160.641  4323.504  4554.646  5846.835  6619.009  7594.623
+        {txt}1 {c |} {res}1860.485  3682.946      3424  4025.387  6622.486  4190.081  6990.502
+{txt}{hline 10}{c BT}{hline 69}
+
+{com}.         restore
+{txt}
+{com}. 
+. 
+. *------------------------------------------------------------------------------*
+. **# PREGUNTA 2: Estimación paramétrica        
+. *------------------------------------------------------------------------------*
+. * Obtenemos las distribución predichas para cada tipo
+. 
+. * Sexo
+.         reg lipcf mujer [pw = f_calib3], robust
+{txt}(sum of wgt is 11,765,730)
+
+Linear regression                               Number of obs     = {res}     8,093
+                                                {txt}F(1, 8091)        =  {res}     9.09
+                                                {txt}Prob > F          = {res}    0.0026
+                                                {txt}R-squared         = {res}    0.0023
+                                                {txt}Root MSE          =    {res} .84247
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}       lipcf{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}mujer {c |}{col 14}{res}{space 2}-.0817738{col 26}{space 2} .0271212{col 37}{space 1}   -3.02{col 46}{space 3}0.003{col 54}{space 4}-.1349383{col 67}{space 3}-.0286093
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 8.154023{col 26}{space 2} .0198115{col 37}{space 1}  411.58{col 46}{space 3}0.000{col 54}{space 4} 8.115188{col 67}{space 3} 8.192859
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}.         predict yhat1, xb
+{txt}(1 missing value generated)
+
+{com}.         replace yhat1 = exp(yhat1)
+{txt}(8,093 real changes made)
+
+{com}. 
+. *Sexo etnia
+.         reg lipcf mujer etnia [pw = f_calib3], robust
+{txt}(sum of wgt is 11,479,266)
+
+Linear regression                               Number of obs     = {res}     7,921
+                                                {txt}F(2, 7918)        =  {res}     5.50
+                                                {txt}Prob > F          = {res}    0.0041
+                                                {txt}R-squared         = {res}    0.0042
+                                                {txt}Root MSE          =    {res} .84426
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}       lipcf{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}mujer {c |}{col 14}{res}{space 2}-.0796714{col 26}{space 2} .0276241{col 37}{space 1}   -2.88{col 46}{space 3}0.004{col 54}{space 4} -.133822{col 67}{space 3}-.0255209
+{txt}{space 7}etnia {c |}{col 14}{res}{space 2}-.1645667{col 26}{space 2} .0972856{col 37}{space 1}   -1.69{col 46}{space 3}0.091{col 54}{space 4}-.3552722{col 67}{space 3} .0261387
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 8.155887{col 26}{space 2} .0201591{col 37}{space 1}  404.58{col 46}{space 3}0.000{col 54}{space 4}  8.11637{col 67}{space 3} 8.195404
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}.         predict yhat2, xb
+{txt}(173 missing values generated)
+
+{com}.         replace yhat2 = exp(yhat2)
+{txt}(7,921 real changes made)
+
+{com}. 
+. *Sexo etnia educación
+.         reg lipcf mujer etnia i.educ_max [pw = f_calib3], robust
+{txt}(sum of wgt is 10,533,253)
+
+Linear regression                               Number of obs     = {res}     7,204
+                                                {txt}F(8, 7195)        =  {res}    59.27
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.1201
+                                                {txt}Root MSE          =    {res} .78984
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}       lipcf{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}mujer {c |}{col 14}{res}{space 2}-.0999219{col 26}{space 2} .0272093{col 37}{space 1}   -3.67{col 46}{space 3}0.000{col 54}{space 4}-.1532601{col 67}{space 3}-.0465838
+{txt}{space 7}etnia {c |}{col 14}{res}{space 2}-.1174227{col 26}{space 2} .0905422{col 37}{space 1}   -1.30{col 46}{space 3}0.195{col 54}{space 4}-.2949121{col 67}{space 3} .0600666
+{txt}{space 12} {c |}
+{space 4}educ_max {c |}
+{space 7}Prii  {c |}{col 14}{res}{space 2} .1937873{col 26}{space 2} .0653441{col 37}{space 1}    2.97{col 46}{space 3}0.003{col 54}{space 4} .0656936{col 67}{space 3}  .321881
+{txt}{space 7}Pric  {c |}{col 14}{res}{space 2} .4862541{col 26}{space 2} .0612095{col 37}{space 1}    7.94{col 46}{space 3}0.000{col 54}{space 4} .3662655{col 67}{space 3} .6062427
+{txt}{space 7}Seci  {c |}{col 14}{res}{space 2} .5375194{col 26}{space 2} .0751022{col 37}{space 1}    7.16{col 46}{space 3}0.000{col 54}{space 4} .3902969{col 67}{space 3} .6847418
+{txt}{space 7}Secc  {c |}{col 14}{res}{space 2} .7859892{col 26}{space 2} .0665408{col 37}{space 1}   11.81{col 46}{space 3}0.000{col 54}{space 4} .6555497{col 67}{space 3} .9164287
+{txt}{space 7}Supi  {c |}{col 14}{res}{space 2} .8608942{col 26}{space 2} .1210352{col 37}{space 1}    7.11{col 46}{space 3}0.000{col 54}{space 4} .6236296{col 67}{space 3} 1.098159
+{txt}{space 7}Supc  {c |}{col 14}{res}{space 2} 1.070605{col 26}{space 2} .0698341{col 37}{space 1}   15.33{col 46}{space 3}0.000{col 54}{space 4} .9337094{col 67}{space 3}   1.2075
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 7.639334{col 26}{space 2} .0591788{col 37}{space 1}  129.09{col 46}{space 3}0.000{col 54}{space 4} 7.523327{col 67}{space 3} 7.755342
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}.         predict yhat3, xb
+{txt}(890 missing values generated)
+
+{com}.         replace yhat3 = exp(yhat3)
+{txt}(7,204 real changes made)
+
+{com}. 
+. *Sexo etnia educación lugar de nacimiento
+.         reg lipcf mujer etnia i.educ_max i.nacimiento [pw = f_calib3], robust
+{txt}(sum of wgt is 10,312,109)
+
+Linear regression                               Number of obs     = {res}     7,059
+                                                {txt}F(16, 7042)       =  {res}    76.69
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.2217
+                                                {txt}Root MSE          =    {res}  .7452
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}       lipcf{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}mujer {c |}{col 14}{res}{space 2}-.0880466{col 26}{space 2} .0258843{col 37}{space 1}   -3.40{col 46}{space 3}0.001{col 54}{space 4}-.1387876{col 67}{space 3}-.0373056
+{txt}{space 7}etnia {c |}{col 14}{res}{space 2}-.1652939{col 26}{space 2} .0870294{col 37}{space 1}   -1.90{col 46}{space 3}0.058{col 54}{space 4}-.3358978{col 67}{space 3}   .00531
+{txt}{space 12} {c |}
+{space 4}educ_max {c |}
+{space 7}Prii  {c |}{col 14}{res}{space 2} .1298067{col 26}{space 2} .0584078{col 37}{space 1}    2.22{col 46}{space 3}0.026{col 54}{space 4} .0153098{col 67}{space 3} .2443035
+{txt}{space 7}Pric  {c |}{col 14}{res}{space 2} .3375426{col 26}{space 2} .0547517{col 37}{space 1}    6.16{col 46}{space 3}0.000{col 54}{space 4} .2302127{col 67}{space 3} .4448725
+{txt}{space 7}Seci  {c |}{col 14}{res}{space 2} .4081943{col 26}{space 2} .0696803{col 37}{space 1}    5.86{col 46}{space 3}0.000{col 54}{space 4} .2716001{col 67}{space 3} .5447886
+{txt}{space 7}Secc  {c |}{col 14}{res}{space 2} .6277345{col 26}{space 2} .0591486{col 37}{space 1}   10.61{col 46}{space 3}0.000{col 54}{space 4} .5117854{col 67}{space 3} .7436835
+{txt}{space 7}Supi  {c |}{col 14}{res}{space 2} .6870699{col 26}{space 2} .1128652{col 37}{space 1}    6.09{col 46}{space 3}0.000{col 54}{space 4} .4658201{col 67}{space 3} .9083197
+{txt}{space 7}Supc  {c |}{col 14}{res}{space 2} .8523873{col 26}{space 2} .0658155{col 37}{space 1}   12.95{col 46}{space 3}0.000{col 54}{space 4} .7233691{col 67}{space 3} .9814054
+{txt}{space 12} {c |}
+{space 2}nacimiento {c |}
+{space 7}CABA  {c |}{col 14}{res}{space 2} .2816836{col 26}{space 2}  .051273{col 37}{space 1}    5.49{col 46}{space 3}0.000{col 54}{space 4} .1811731{col 67}{space 3}  .382194
+{txt}{space 7}Cuyo  {c |}{col 14}{res}{space 2}-.5553123{col 26}{space 2}   .04541{col 37}{space 1}  -12.23{col 46}{space 3}0.000{col 54}{space 4}-.6443295{col 67}{space 3} -.466295
+{txt}{space 3}Pampeana  {c |}{col 14}{res}{space 2}-.1477818{col 26}{space 2} .0518477{col 37}{space 1}   -2.85{col 46}{space 3}0.004{col 54}{space 4} -.249419{col 67}{space 3}-.0461447
+{txt}{space 5}Centro  {c |}{col 14}{res}{space 2}-.2668333{col 26}{space 2} .0429205{col 37}{space 1}   -6.22{col 46}{space 3}0.000{col 54}{space 4}-.3509704{col 67}{space 3}-.1826961
+{txt}{space 8}NEA  {c |}{col 14}{res}{space 2}-.5827261{col 26}{space 2}  .049774{col 37}{space 1}  -11.71{col 46}{space 3}0.000{col 54}{space 4}-.6802981{col 67}{space 3}-.4851542
+{txt}{space 8}NOA  {c |}{col 14}{res}{space 2}-.6525561{col 26}{space 2} .0482561{col 37}{space 1}  -13.52{col 46}{space 3}0.000{col 54}{space 4}-.7471526{col 67}{space 3}-.5579596
+{txt}{space 2}Patagonia  {c |}{col 14}{res}{space 2} .0231305{col 26}{space 2} .0626369{col 37}{space 1}    0.37{col 46}{space 3}0.712{col 54}{space 4}-.0996567{col 67}{space 3} .1459178
+{txt}{space 2}Otro Pais  {c |}{col 14}{res}{space 2}-.0830992{col 26}{space 2} .0646172{col 37}{space 1}   -1.29{col 46}{space 3}0.198{col 54}{space 4}-.2097683{col 67}{space 3} .0435699
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 7.993755{col 26}{space 2}  .061454{col 37}{space 1}  130.08{col 46}{space 3}0.000{col 54}{space 4} 7.873287{col 67}{space 3} 8.114224
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}.         predict yhat4, xb
+{txt}(1,035 missing values generated)
+
+{com}.         replace yhat4 = exp(yhat4)
+{txt}(7,059 real changes made)
+
+{com}. 
+. * Calculamos el Gini con las distribuciones predichas
+. 
+.         gini yhat1 [w = f_calib3], reps(200) bs
+{txt}(frequency weights assumed)
+
+{res}gini yhat1 = 0.0204
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini yhat1 , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}      8093
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200  .0203924 -6.51e-06  .0000348   .0203238    .020461   {txt}(N)
+{col 13} {c |}{res}{col 53} .0203109   .0204338   {txt}(P)
+{col 13} {c |}{res}{col 53} .0203125   .0204355  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+
+{com}.         local gini_yhat1 = r(gini)
+{txt}
+{com}. 
+.         gini yhat1 [w = f_calib3], reps(200) bs
+{txt}(frequency weights assumed)
+
+{res}gini yhat1 = 0.0204
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini yhat1 , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}      8093
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200  .0203924 -3.71e-06  .0000352   .0203229   .0204618   {txt}(N)
+{col 13} {c |}{res}{col 53} .0203071   .0204368   {txt}(P)
+{col 13} {c |}{res}{col 53} .0202929   .0204339  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+
+{com}.         local gini_yhat2 = r(gini)
+{txt}
+{com}. 
+.         gini yhat1 [w = f_calib3], reps(200) bs
+{txt}(frequency weights assumed)
+
+{res}gini yhat1 = 0.0204
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini yhat1 , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}      8093
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200  .0203924 -6.79e-06  .0000329   .0203276   .0204572   {txt}(N)
+{col 13} {c |}{res}{col 53} .0203158   .0204367   {txt}(P)
+{col 13} {c |}{res}{col 53} .0203188   .0204374  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+
+{com}.         local gini_yhat3 = r(gini)
+{txt}
+{com}. 
+.         gini yhat1 [w = f_calib3], reps(200) bs
+{txt}(frequency weights assumed)
+
+{res}gini yhat1 = 0.0204
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini yhat1 , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}      8093
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200  .0203924 -7.68e-06  .0000346   .0203242   .0204605   {txt}(N)
+{col 13} {c |}{res}{col 53} .0203023   .0204333   {txt}(P)
+{col 13} {c |}{res}{col 53} .0203063   .0204356  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+
+{com}.         local gini_yhat4 = r(gini)
+{txt}
+{com}. 
+. * La desigualdad de oportunidades es:
+. * Recordemos que esto es una medida absoluta para cada grupo
+. 
+.         di " D. de oportunidades (sexo) =" `gini_yhat1'
+{res} D. de oportunidades (sexo) =.02039238
+{txt}
+{com}.         di " D. de oportunidades (sexo y etnia) =" `gini_yhat2'
+{res} D. de oportunidades (sexo y etnia) =.02039238
+{txt}
+{com}.         di " D. de oportunidades (sexo, etnia y educación) =" `gini_yhat3'
+{res} D. de oportunidades (sexo, etnia y educación) =.02039238
+{txt}
+{com}.         di " D. de oportunidades (sexo, etnia, educacion y region de nacimiento) =" `gini_yhat4'
+{res} D. de oportunidades (sexo, etnia, educacion y region de nacimiento) =.02039238
+{txt}
+{com}. 
+. * Ahora calculamos cúanto de esta desigualdad es producto de la desigualdad de oportunidades.
+. 
+. * Para ello, calculamos la desigualdad total:
+. 
+.         gini ithpc [w = f_calib3], reps(200) bs
+{txt}(frequency weights assumed)
+
+{res}gini ithpc = 0.4387
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini ithpc , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}      8094
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200  .4386865 -.0001843  .0047545   .4293108   .4480621   {txt}(N)
+{col 13} {c |}{res}{col 53} .4291857   .4479702   {txt}(P)
+{col 13} {c |}{res}{col 53} .4292972   .4481567  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+
+{com}.         local gini_ipcf = r(gini)
+{txt}
+{com}. 
+. * Calculamos la desigualdad relativa
+. 
+.         di " D. de oportunidades relativa (sexo) =" `gini_yhat1'/`gini_ipcf'
+{res} D. de oportunidades relativa (sexo) =.0464851
+{txt}
+{com}.         di " D. de oportunidades relativa (sexo y etnia) =" `gini_yhat1'/`gini_ipcf'
+{res} D. de oportunidades relativa (sexo y etnia) =.0464851
+{txt}
+{com}.         di " D. de oportunidades relativa (sexo, etnia y educación) =" `gini_yhat1'/`gini_ipcf'
+{res} D. de oportunidades relativa (sexo, etnia y educación) =.0464851
+{txt}
+{com}.         di " D. de oportunidades relativa (sexo, etnia, educacion y region de nacimiento) =" `gini_yhat1'/`gini_ipcf'
+{res} D. de oportunidades relativa (sexo, etnia, educacion y region de nacimiento) =.0464851
+{txt}
+{com}. 
+.         drop yhat1 yhat2 yhat3
+{txt}
+{com}.         rename yhat4 yhat
+{res}{txt}
+{com}. *------------------------------------------------------------------------------*
+. **# PREGUNTA 3: Estimación NO paramétrica     
+. *------------------------------------------------------------------------------*
+. 
+.         gen ipcf2 = .
+{txt}(8,094 missing values generated)
+
+{com}. 
+. * Iteramos por cada uno de los posibles grupos. Recordemos la madlcion de la dimensionalidad como el mayor problema. Intensivo en datos.
+.         qui {c -(}
+{txt}
+{com}. 
+. * Gini de yhat 
+.         gini ipcf2 [w=f_calib3], reps(200) bs
+{txt}(frequency weights assumed)
+
+{res}gini ipcf2 = 0.2278
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini ipcf2 , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}      6684
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200  .2278131 -.0001153  .0027329    .222424   .2332022   {txt}(N)
+{col 13} {c |}{res}{col 53} .2223497   .2335064   {txt}(P)
+{col 13} {c |}{res}{col 53} .2232735   .2338514  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+
+{com}.         local gini_ipcf2 = r(gini)
+{txt}
+{com}. 
+. *  Desigualdad de oportunidades:
+. 
+.         di " D. de oportunidades (no parametrica) =" `gini_ipcf2'
+{res} D. de oportunidades (no parametrica) =.22781313
+{txt}
+{com}.         di " D. de oportunidades (parametrica) =" `gini_yhat4'
+{res} D. de oportunidades (parametrica) =.02039238
+{txt}
+{com}. 
+. * Desigualdad de oportunidades relativa:
+. 
+.         di " D. de oportunidades relativa (no parametrica) =" `gini_ipcf2'/`gini_ipcf'
+{res} D. de oportunidades relativa (no parametrica) =.51930742
+{txt}
+{com}.         di " D. de oportunidades relativa (parametrica) =" `gini_yhat4'/`gini_ipcf'
+{res} D. de oportunidades relativa (parametrica) =.0464851
+{txt}
+{com}. 
+. *Botton line:  NO hay mucha diferencia entre la esti,ación paramétrica y no parametrica.
+. 
+. *------------------------------------------------------------------------------*
+. **# PREGUNTA 4
+. *------------------------------------------------------------------------------*
+. 
+.         gen gini_iop = .
+{txt}(8,094 missing values generated)
+
+{com}.         gen gini_iop_se = .
+{txt}(8,094 missing values generated)
+
+{com}.         gen gini_t =.
+{txt}(8,094 missing values generated)
+
+{com}. 
+. 
+. * Por regiones:
+. 
+.         forval i = 1(1)8 {c -(}
+{txt}  2{com}.                 gini yhat [w=f_calib3] if region == `i', reps(200) bs
+{txt}  3{com}.                 replace gini_iop = r(gini) if region == `i'
+{txt}  4{com}.                 replace gini_iop_se = _se[_bs_1] if region == `i'
+{txt}  5{com}.                 
+.                 /* Para la desigualdad relativa*/
+.                 gini ithpc [w = f_calib3] if region == `i'
+{txt}  6{com}.                 replace gini_t = r(gini) if region == `i'
+{txt}  7{com}.         {c )-}
+{txt}(frequency weights assumed)
+
+{res}gini yhat = 0.1616
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini yhat , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}       767
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200  .1616036 -.0006252  .0057694   .1502267   .1729805   {txt}(N)
+{col 13} {c |}{res}{col 53} .1497862   .1726274   {txt}(P)
+{col 13} {c |}{res}{col 53} .1520759   .1728136  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+(858 real changes made)
+(858 real changes made)
+(frequency weights assumed)
+
+{res}gini ithpc = 0.3779
+{txt}(858 real changes made)
+(frequency weights assumed)
+
+{res}gini yhat = 0.1741
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini yhat , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}       528
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200  .1740535 -.0009779  .0065775    .161083    .187024   {txt}(N)
+{col 13} {c |}{res}{col 53} .1605774   .1854879   {txt}(P)
+{col 13} {c |}{res}{col 53} .1618711   .1874473  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+(626 real changes made)
+(626 real changes made)
+(frequency weights assumed)
+
+{res}gini ithpc = 0.3700
+{txt}(626 real changes made)
+(frequency weights assumed)
+
+{res}gini yhat = 0.1653
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini yhat , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}      1011
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200   .165252 -.0001054  .0052048   .1549884   .1755155   {txt}(N)
+{col 13} {c |}{res}{col 53}  .154859   .1753297   {txt}(P)
+{col 13} {c |}{res}{col 53} .1549259   .1753516  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+(1,130 real changes made)
+(1,130 real changes made)
+(frequency weights assumed)
+
+{res}gini ithpc = 0.3979
+{txt}(1,130 real changes made)
+(frequency weights assumed)
+
+{res}gini yhat = 0.1469
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini yhat , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}       944
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200  .1469148 -.0006133  .0052661   .1365304   .1572992   {txt}(N)
+{col 13} {c |}{res}{col 53} .1350422   .1552223   {txt}(P)
+{col 13} {c |}{res}{col 53} .1371288   .1556175  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+(1,079 real changes made)
+(1,079 real changes made)
+(frequency weights assumed)
+
+{res}gini ithpc = 0.4093
+{txt}(1,079 real changes made)
+(frequency weights assumed)
+
+{res}gini yhat = 0.1509
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini yhat , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}      1560
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200  .1509173 -.0002673  .0041139   .1428049   .1590296   {txt}(N)
+{col 13} {c |}{res}{col 53} .1417095   .1589503   {txt}(P)
+{col 13} {c |}{res}{col 53} .1425163   .1590589  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+(1,744 real changes made)
+(1,744 real changes made)
+(frequency weights assumed)
+
+{res}gini ithpc = 0.4164
+{txt}(1,744 real changes made)
+(frequency weights assumed)
+
+{res}gini yhat = 0.1632
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini yhat , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}       632
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200  .1632126 -.0000241  .0064062   .1505798   .1758454   {txt}(N)
+{col 13} {c |}{res}{col 53} .1507648   .1757751   {txt}(P)
+{col 13} {c |}{res}{col 53}   .15054   .1756497  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+(707 real changes made)
+(707 real changes made)
+(frequency weights assumed)
+
+{res}gini ithpc = 0.4371
+{txt}(707 real changes made)
+(frequency weights assumed)
+
+{res}gini yhat = 0.1820
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini yhat , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}       975
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200  .1819828 -.0008434  .0055766   .1709861   .1929795   {txt}(N)
+{col 13} {c |}{res}{col 53} .1709885   .1915964   {txt}(P)
+{col 13} {c |}{res}{col 53}  .171835   .1933745  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+(1,177 real changes made)
+(1,177 real changes made)
+(frequency weights assumed)
+
+{res}gini ithpc = 0.4192
+{txt}(1,177 real changes made)
+(frequency weights assumed)
+
+{res}gini yhat = 0.1777
+
+{txt}Bootstraping...
+
+Command:{col 15}hacebs_gini yhat , w(f_calib3)
+Statistic:{col 15}_bs_1{col 25} = r(gini)
+
+Bootstrap statistics{col 51}Number of obs    ={res}       642
+{txt}{col 51}Replications     ={res}       200
+
+{txt}{hline 13}{c TT}{hline 64}
+Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
+{hline 13}{c +}{hline 64}
+       _bs_1 {c |}{res}   200  .1777219   .000096  .0059344   .1660195   .1894243   {txt}(N)
+{col 13} {c |}{res}{col 53} .1676135   .1913854   {txt}(P)
+{col 13} {c |}{res}{col 53} .1680379   .1919368  {txt}(BC)
+{hline 13}{c BT}{hline 64}
+Key:{col 7}N: Normal
+{col 7}P: Percentile
+{col 6}BC: Bias-corrected
+(773 real changes made)
+(773 real changes made)
+(frequency weights assumed)
+
+{res}gini ithpc = 0.4566
+{txt}(773 real changes made)
+
+{com}. 
+. preserve
+{txt}
+{com}.         version 16: table region, c(mean gini_iop mean gini_iop_se) replace
+
+{txt}{hline 10}{c TT}{hline 31}
+   region {c |} mean(gini_iop)  mean(gini_i~e)
+{hline 10}{c +}{hline 31}
+      GBA {c |}       {res}.1616036        .0057694
+     {txt}CABA {c |}       {res}.1740535        .0065775
+     {txt}Cuyo {c |}        {res}.165252        .0052048
+ {txt}Pampeana {c |}       {res}.1469148        .0052661
+   {txt}Centro {c |}       {res}.1509173        .0041139
+      {txt}NEA {c |}       {res}.1632126        .0064062
+      {txt}NOA {c |}       {res}.1819828        .0055766
+{txt}Patagonia {c |}       {res}.1777219        .0059344
+{txt}{hline 10}{c BT}{hline 31}
+
+{com}.         serrbar table1 table2 region, ///
+>                 scale(2) ytitle("Desigualdad de Oportunidades") xtitle("") xlabel(1(1)8, valuelabel) ///
+>                 ylabel(, angle(horizontal)) legend(position(6)) scale(1.3)
+{res}{txt}
+{com}.         graph export "${c -(}output{c )-}/iop_region.pdf", replace
+{txt}{p 0 4 2}
+file {bf}
+D:\UNLP_Maeco\Distribucion\TP-Distribucion\TP5/output/iop_region.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}.         graph export "${c -(}output{c )-}/iop_region.png", replace
+{txt}{p 0 4 2}
+file {bf}
+D:\UNLP_Maeco\Distribucion\TP-Distribucion\TP5/output/iop_region.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. restore
+{txt}
+{com}. 
+. *------------------------------------------------------------------------------*
+. **# PREGUNTA 5
+. *------------------------------------------------------------------------------*
+. 
+. *Gini relativo
+. 
+.         gen gini_r = gini_iop/gini_t
+{txt}
+{com}. 
+. preserve
+{txt}
+{com}.         version 16: table region, c(mean gini_r) replace
+
+{txt}{hline 10}{c TT}{hline 13}
+   region {c |} mean(gini_r)
+{hline 10}{c +}{hline 13}
+      GBA {c |}     {res}.4276724
+     {txt}CABA {c |}     {res}.4703675
+     {txt}Cuyo {c |}     {res}.4153107
+ {txt}Pampeana {c |}     {res}.3589037
+   {txt}Centro {c |}     {res}.3624235
+      {txt}NEA {c |}     {res}.3734377
+      {txt}NOA {c |}     {res}.4340938
+{txt}Patagonia {c |}     {res}.3892498
+{txt}{hline 10}{c BT}{hline 13}
+
+{com}.         replace table1 = table1*100
+{txt}(8 real changes made)
+
+{com}.         graph hbar table1, over(region) ytitle("Desigualdad Relativa(%)") ///
+>                 ylabel(, angle(horizontal)) legend(position(6)) scale(1.3)
+{res}{txt}
+{com}.         graph export "${c -(}output{c )-}/iop_region_relativa.pdf", replace
+{txt}{p 0 4 2}
+file {bf}
+D:\UNLP_Maeco\Distribucion\TP-Distribucion\TP5/output/iop_region_relativa.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}.         graph export "${c -(}output{c )-}/iop_region_relativa.png", replace
+{txt}{p 0 4 2}
+file {bf}
+D:\UNLP_Maeco\Distribucion\TP-Distribucion\TP5/output/iop_region_relativa.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. restore
+{txt}
+{com}. 
+. log close _all
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}D:\UNLP_Maeco\Distribucion\TP-Distribucion\TP5/log_solucion.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}11 Nov 2024, 20:10:47
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
