@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}D:\UNLP_Maeco\Distribucion\TP-Distribucion\TP5/log_solucion.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}11 Nov 2024, 20:10:36
+ {txt}opened on:  {res}12 Nov 2024, 22:19:58
 {txt}
 {com}. 
 . *------------------------------------------------------------------------------*
@@ -227,9 +227,9 @@ Bootstrap statistics{col 51}Number of obs    ={res}      8093
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200  .0203924 -6.51e-06  .0000348   .0203238    .020461   {txt}(N)
-{col 13} {c |}{res}{col 53} .0203109   .0204338   {txt}(P)
-{col 13} {c |}{res}{col 53} .0203125   .0204355  {txt}(BC)
+       _bs_1 {c |}{res}   200  .0203924 -6.30e-06  .0000331   .0203272   .0204576   {txt}(N)
+{col 13} {c |}{res}{col 53} .0203098   .0204376   {txt}(P)
+{col 13} {c |}{res}{col 53} .0203227   .0204402  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -238,25 +238,25 @@ Key:{col 7}N: Normal
 {com}.         local gini_yhat1 = r(gini)
 {txt}
 {com}. 
-.         gini yhat1 [w = f_calib3], reps(200) bs
+.         gini yhat2 [w = f_calib3], reps(200) bs
 {txt}(frequency weights assumed)
 
-{res}gini yhat1 = 0.0204
+{res}gini yhat2 = 0.0258
 
 {txt}Bootstraping...
 
-Command:{col 15}hacebs_gini yhat1 , w(f_calib3)
+Command:{col 15}hacebs_gini yhat2 , w(f_calib3)
 Statistic:{col 15}_bs_1{col 25} = r(gini)
 
-Bootstrap statistics{col 51}Number of obs    ={res}      8093
+Bootstrap statistics{col 51}Number of obs    ={res}      7921
 {txt}{col 51}Replications     ={res}       200
 
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200  .0203924 -3.71e-06  .0000352   .0203229   .0204618   {txt}(N)
-{col 13} {c |}{res}{col 53} .0203071   .0204368   {txt}(P)
-{col 13} {c |}{res}{col 53} .0202929   .0204339  {txt}(BC)
+       _bs_1 {c |}{res}   200  .0257659 -.0000618  .0005185   .0247434   .0267885   {txt}(N)
+{col 13} {c |}{res}{col 53} .0248103   .0269662   {txt}(P)
+{col 13} {c |}{res}{col 53} .0249473   .0271095  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -265,25 +265,25 @@ Key:{col 7}N: Normal
 {com}.         local gini_yhat2 = r(gini)
 {txt}
 {com}. 
-.         gini yhat1 [w = f_calib3], reps(200) bs
+.         gini yhat3 [w = f_calib3], reps(200) bs
 {txt}(frequency weights assumed)
 
-{res}gini yhat1 = 0.0204
+{res}gini yhat3 = 0.1645
 
 {txt}Bootstraping...
 
-Command:{col 15}hacebs_gini yhat1 , w(f_calib3)
+Command:{col 15}hacebs_gini yhat3 , w(f_calib3)
 Statistic:{col 15}_bs_1{col 25} = r(gini)
 
-Bootstrap statistics{col 51}Number of obs    ={res}      8093
+Bootstrap statistics{col 51}Number of obs    ={res}      7204
 {txt}{col 51}Replications     ={res}       200
 
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200  .0203924 -6.79e-06  .0000329   .0203276   .0204572   {txt}(N)
-{col 13} {c |}{res}{col 53} .0203158   .0204367   {txt}(P)
-{col 13} {c |}{res}{col 53} .0203188   .0204374  {txt}(BC)
+       _bs_1 {c |}{res}   200  .1645212 -.0000191  .0020269   .1605242   .1685182   {txt}(N)
+{col 13} {c |}{res}{col 53} .1605499   .1688152   {txt}(P)
+{col 13} {c |}{res}{col 53} .1604564    .168779  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -292,25 +292,25 @@ Key:{col 7}N: Normal
 {com}.         local gini_yhat3 = r(gini)
 {txt}
 {com}. 
-.         gini yhat1 [w = f_calib3], reps(200) bs
+.         gini yhat4 [w = f_calib3], reps(200) bs
 {txt}(frequency weights assumed)
 
-{res}gini yhat1 = 0.0204
+{res}gini yhat4 = 0.2232
 
 {txt}Bootstraping...
 
-Command:{col 15}hacebs_gini yhat1 , w(f_calib3)
+Command:{col 15}hacebs_gini yhat4 , w(f_calib3)
 Statistic:{col 15}_bs_1{col 25} = r(gini)
 
-Bootstrap statistics{col 51}Number of obs    ={res}      8093
+Bootstrap statistics{col 51}Number of obs    ={res}      7059
 {txt}{col 51}Replications     ={res}       200
 
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200  .0203924 -7.68e-06  .0000346   .0203242   .0204605   {txt}(N)
-{col 13} {c |}{res}{col 53} .0203023   .0204333   {txt}(P)
-{col 13} {c |}{res}{col 53} .0203063   .0204356  {txt}(BC)
+       _bs_1 {c |}{res}   200  .2231938  .0001296  .0026014    .218064   .2283236   {txt}(N)
+{col 13} {c |}{res}{col 53} .2186297   .2289707   {txt}(P)
+{col 13} {c |}{res}{col 53}  .218549     .22863  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -326,13 +326,13 @@ Key:{col 7}N: Normal
 {res} D. de oportunidades (sexo) =.02039238
 {txt}
 {com}.         di " D. de oportunidades (sexo y etnia) =" `gini_yhat2'
-{res} D. de oportunidades (sexo y etnia) =.02039238
+{res} D. de oportunidades (sexo y etnia) =.02576592
 {txt}
 {com}.         di " D. de oportunidades (sexo, etnia y educación) =" `gini_yhat3'
-{res} D. de oportunidades (sexo, etnia y educación) =.02039238
+{res} D. de oportunidades (sexo, etnia y educación) =.16452119
 {txt}
 {com}.         di " D. de oportunidades (sexo, etnia, educacion y region de nacimiento) =" `gini_yhat4'
-{res} D. de oportunidades (sexo, etnia, educacion y region de nacimiento) =.02039238
+{res} D. de oportunidades (sexo, etnia, educacion y region de nacimiento) =.22319378
 {txt}
 {com}. 
 . * Ahora calculamos cúanto de esta desigualdad es producto de la desigualdad de oportunidades.
@@ -355,9 +355,9 @@ Bootstrap statistics{col 51}Number of obs    ={res}      8094
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200  .4386865 -.0001843  .0047545   .4293108   .4480621   {txt}(N)
-{col 13} {c |}{res}{col 53} .4291857   .4479702   {txt}(P)
-{col 13} {c |}{res}{col 53} .4292972   .4481567  {txt}(BC)
+       _bs_1 {c |}{res}   200  .4386865  .0002071  .0047919   .4292371   .4481358   {txt}(N)
+{col 13} {c |}{res}{col 53} .4291596    .448199   {txt}(P)
+{col 13} {c |}{res}{col 53} .4290788   .4480922  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -371,14 +371,14 @@ Key:{col 7}N: Normal
 .         di " D. de oportunidades relativa (sexo) =" `gini_yhat1'/`gini_ipcf'
 {res} D. de oportunidades relativa (sexo) =.0464851
 {txt}
-{com}.         di " D. de oportunidades relativa (sexo y etnia) =" `gini_yhat1'/`gini_ipcf'
-{res} D. de oportunidades relativa (sexo y etnia) =.0464851
+{com}.         di " D. de oportunidades relativa (sexo y etnia) =" `gini_yhat2'/`gini_ipcf'
+{res} D. de oportunidades relativa (sexo y etnia) =.05873426
 {txt}
-{com}.         di " D. de oportunidades relativa (sexo, etnia y educación) =" `gini_yhat1'/`gini_ipcf'
-{res} D. de oportunidades relativa (sexo, etnia y educación) =.0464851
+{com}.         di " D. de oportunidades relativa (sexo, etnia y educación) =" `gini_yhat3'/`gini_ipcf'
+{res} D. de oportunidades relativa (sexo, etnia y educación) =.37503138
 {txt}
-{com}.         di " D. de oportunidades relativa (sexo, etnia, educacion y region de nacimiento) =" `gini_yhat1'/`gini_ipcf'
-{res} D. de oportunidades relativa (sexo, etnia, educacion y region de nacimiento) =.0464851
+{com}.         di " D. de oportunidades relativa (sexo, etnia, educacion y region de nacimiento) =" `gini_yhat4'/`gini_ipcf'
+{res} D. de oportunidades relativa (sexo, etnia, educacion y region de nacimiento) =.50877747
 {txt}
 {com}. 
 .         drop yhat1 yhat2 yhat3
@@ -414,9 +414,9 @@ Bootstrap statistics{col 51}Number of obs    ={res}      6684
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200  .2278131 -.0001153  .0027329    .222424   .2332022   {txt}(N)
-{col 13} {c |}{res}{col 53} .2223497   .2335064   {txt}(P)
-{col 13} {c |}{res}{col 53} .2232735   .2338514  {txt}(BC)
+       _bs_1 {c |}{res}   200  .2278131 -.0001601  .0026876   .2225134   .2331129   {txt}(N)
+{col 13} {c |}{res}{col 53} .2222639   .2327324   {txt}(P)
+{col 13} {c |}{res}{col 53} .2223309   .2327451  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -431,7 +431,7 @@ Key:{col 7}N: Normal
 {res} D. de oportunidades (no parametrica) =.22781313
 {txt}
 {com}.         di " D. de oportunidades (parametrica) =" `gini_yhat4'
-{res} D. de oportunidades (parametrica) =.02039238
+{res} D. de oportunidades (parametrica) =.22319378
 {txt}
 {com}. 
 . * Desigualdad de oportunidades relativa:
@@ -440,7 +440,7 @@ Key:{col 7}N: Normal
 {res} D. de oportunidades relativa (no parametrica) =.51930742
 {txt}
 {com}.         di " D. de oportunidades relativa (parametrica) =" `gini_yhat4'/`gini_ipcf'
-{res} D. de oportunidades relativa (parametrica) =.0464851
+{res} D. de oportunidades relativa (parametrica) =.50877747
 {txt}
 {com}. 
 . *Botton line:  NO hay mucha diferencia entre la esti,ación paramétrica y no parametrica.
@@ -486,9 +486,9 @@ Bootstrap statistics{col 51}Number of obs    ={res}       767
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200  .1616036 -.0006252  .0057694   .1502267   .1729805   {txt}(N)
-{col 13} {c |}{res}{col 53} .1497862   .1726274   {txt}(P)
-{col 13} {c |}{res}{col 53} .1520759   .1728136  {txt}(BC)
+       _bs_1 {c |}{res}   200  .1616036 -.0005004  .0058121   .1501423   .1730649   {txt}(N)
+{col 13} {c |}{res}{col 53} .1484157   .1716983   {txt}(P)
+{col 13} {c |}{res}{col 53} .1489325   .1716983  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -514,9 +514,9 @@ Bootstrap statistics{col 51}Number of obs    ={res}       528
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200  .1740535 -.0009779  .0065775    .161083    .187024   {txt}(N)
-{col 13} {c |}{res}{col 53} .1605774   .1854879   {txt}(P)
-{col 13} {c |}{res}{col 53} .1618711   .1874473  {txt}(BC)
+       _bs_1 {c |}{res}   200  .1740535 -.0007056  .0063229    .161585   .1865221   {txt}(N)
+{col 13} {c |}{res}{col 53} .1608472   .1850497   {txt}(P)
+{col 13} {c |}{res}{col 53} .1624575   .1878958  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -542,9 +542,9 @@ Bootstrap statistics{col 51}Number of obs    ={res}      1011
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200   .165252 -.0001054  .0052048   .1549884   .1755155   {txt}(N)
-{col 13} {c |}{res}{col 53}  .154859   .1753297   {txt}(P)
-{col 13} {c |}{res}{col 53} .1549259   .1753516  {txt}(BC)
+       _bs_1 {c |}{res}   200   .165252  .0006435  .0048648   .1556588   .1748451   {txt}(N)
+{col 13} {c |}{res}{col 53} .1572109   .1745986   {txt}(P)
+{col 13} {c |}{res}{col 53} .1566193    .173879  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -570,9 +570,9 @@ Bootstrap statistics{col 51}Number of obs    ={res}       944
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200  .1469148 -.0006133  .0052661   .1365304   .1572992   {txt}(N)
-{col 13} {c |}{res}{col 53} .1350422   .1552223   {txt}(P)
-{col 13} {c |}{res}{col 53} .1371288   .1556175  {txt}(BC)
+       _bs_1 {c |}{res}   200  .1469148 -.0001367  .0052242   .1366129   .1572168   {txt}(N)
+{col 13} {c |}{res}{col 53} .1359697   .1568296   {txt}(P)
+{col 13} {c |}{res}{col 53}   .13623   .1568864  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -598,9 +598,9 @@ Bootstrap statistics{col 51}Number of obs    ={res}      1560
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200  .1509173 -.0002673  .0041139   .1428049   .1590296   {txt}(N)
-{col 13} {c |}{res}{col 53} .1417095   .1589503   {txt}(P)
-{col 13} {c |}{res}{col 53} .1425163   .1590589  {txt}(BC)
+       _bs_1 {c |}{res}   200  .1509173  .0000143  .0040166   .1429968   .1588378   {txt}(N)
+{col 13} {c |}{res}{col 53} .1430798   .1583983   {txt}(P)
+{col 13} {c |}{res}{col 53}   .14359   .1588081  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -626,9 +626,9 @@ Bootstrap statistics{col 51}Number of obs    ={res}       632
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200  .1632126 -.0000241  .0064062   .1505798   .1758454   {txt}(N)
-{col 13} {c |}{res}{col 53} .1507648   .1757751   {txt}(P)
-{col 13} {c |}{res}{col 53}   .15054   .1756497  {txt}(BC)
+       _bs_1 {c |}{res}   200  .1632126 -.0002862  .0066052   .1501874   .1762378   {txt}(N)
+{col 13} {c |}{res}{col 53} .1497478   .1757122   {txt}(P)
+{col 13} {c |}{res}{col 53}  .149469   .1754162  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -654,9 +654,9 @@ Bootstrap statistics{col 51}Number of obs    ={res}       975
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200  .1819828 -.0008434  .0055766   .1709861   .1929795   {txt}(N)
-{col 13} {c |}{res}{col 53} .1709885   .1915964   {txt}(P)
-{col 13} {c |}{res}{col 53}  .171835   .1933745  {txt}(BC)
+       _bs_1 {c |}{res}   200  .1819828 -.0009789  .0064694   .1692253   .1947402   {txt}(N)
+{col 13} {c |}{res}{col 53} .1691756   .1954676   {txt}(P)
+{col 13} {c |}{res}{col 53}  .169954   .1963237  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -682,9 +682,9 @@ Bootstrap statistics{col 51}Number of obs    ={res}       642
 {txt}{hline 13}{c TT}{hline 64}
 Variable     {c |}  Reps  Observed      Bias  Std. err. [95% conf. interval]
 {hline 13}{c +}{hline 64}
-       _bs_1 {c |}{res}   200  .1777219   .000096  .0059344   .1660195   .1894243   {txt}(N)
-{col 13} {c |}{res}{col 53} .1676135   .1913854   {txt}(P)
-{col 13} {c |}{res}{col 53} .1680379   .1919368  {txt}(BC)
+       _bs_1 {c |}{res}   200  .1777219 -.0010073  .0062982   .1653021   .1901418   {txt}(N)
+{col 13} {c |}{res}{col 53} .1648724    .189433   {txt}(P)
+{col 13} {c |}{res}{col 53}  .167202   .1907987  {txt}(BC)
 {hline 13}{c BT}{hline 64}
 Key:{col 7}N: Normal
 {col 7}P: Percentile
@@ -704,14 +704,14 @@ Key:{col 7}N: Normal
 {txt}{hline 10}{c TT}{hline 31}
    region {c |} mean(gini_iop)  mean(gini_i~e)
 {hline 10}{c +}{hline 31}
-      GBA {c |}       {res}.1616036        .0057694
-     {txt}CABA {c |}       {res}.1740535        .0065775
-     {txt}Cuyo {c |}        {res}.165252        .0052048
- {txt}Pampeana {c |}       {res}.1469148        .0052661
-   {txt}Centro {c |}       {res}.1509173        .0041139
-      {txt}NEA {c |}       {res}.1632126        .0064062
-      {txt}NOA {c |}       {res}.1819828        .0055766
-{txt}Patagonia {c |}       {res}.1777219        .0059344
+      GBA {c |}       {res}.1616036        .0058121
+     {txt}CABA {c |}       {res}.1740535        .0063229
+     {txt}Cuyo {c |}        {res}.165252        .0048648
+ {txt}Pampeana {c |}       {res}.1469148        .0052242
+   {txt}Centro {c |}       {res}.1509173        .0040166
+      {txt}NEA {c |}       {res}.1632126        .0066052
+      {txt}NOA {c |}       {res}.1819828        .0064694
+{txt}Patagonia {c |}       {res}.1777219        .0062982
 {txt}{hline 10}{c BT}{hline 31}
 
 {com}.         serrbar table1 table2 region, ///
@@ -796,7 +796,7 @@ format
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}D:\UNLP_Maeco\Distribucion\TP-Distribucion\TP5/log_solucion.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}11 Nov 2024, 20:10:47
+ {txt}closed on:  {res}12 Nov 2024, 22:20:08
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

@@ -88,6 +88,25 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section*{Pregunta 1}
 	
+{
+	\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+		\toprule
+		&      MCO         &Cuantiles         &                  &                  &                  &                  \\
+		&\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         \\
+		\midrule&    0.925\sym{***}&    0.886\sym{***}&    0.876\sym{***}&    0.857\sym{***}&    0.924\sym{***}&    1.000\sym{***}\\
+		&  (0.079)         &  (0.042)         &  (0.058)         &  (0.065)         &  (0.118)         &  (0.214)         \\
+		\addlinespace
+		Logartim&   -0.061\sym{***}&   -0.060\sym{***}&   -0.060\sym{***}&   -0.058\sym{***}&   -0.058\sym{***}&   -0.060\sym{***}\\
+		&  (0.004)         &  (0.002)         &  (0.003)         &  (0.004)         &  (0.007)         &  (0.011)         \\
+		\addlinespace
+		Constant        &    4.859\sym{***}&    4.477\sym{***}&    4.700\sym{***}&    5.002\sym{***}&    4.989\sym{***}&    5.125\sym{***}\\
+		&  (0.338)         &  (0.186)         &  (0.275)         &  (0.249)         &  (0.485)         &  (0.926)         \\
+		\bottomrule
+		\multicolumn{7}{l}{\footnotesize Standard errors in parentheses}\\
+		\multicolumn{7}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+	\end{tabular}
+}
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% PREGUNTA 2

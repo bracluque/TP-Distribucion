@@ -56,13 +56,13 @@
 	gini yhat1 [w = f_calib3], reps(200) bs
 	local gini_yhat1 = r(gini)
 
-	gini yhat1 [w = f_calib3], reps(200) bs
+	gini yhat2 [w = f_calib3], reps(200) bs
 	local gini_yhat2 = r(gini)
 
-	gini yhat1 [w = f_calib3], reps(200) bs
+	gini yhat3 [w = f_calib3], reps(200) bs
 	local gini_yhat3 = r(gini)
 
-	gini yhat1 [w = f_calib3], reps(200) bs
+	gini yhat4 [w = f_calib3], reps(200) bs
 	local gini_yhat4 = r(gini)
 
 * La desigualdad de oportunidades es:
@@ -83,9 +83,9 @@
 * Calculamos la desigualdad relativa
 
 	di " D. de oportunidades relativa (sexo) =" `gini_yhat1'/`gini_ipcf'
-	di " D. de oportunidades relativa (sexo y etnia) =" `gini_yhat1'/`gini_ipcf'
-	di " D. de oportunidades relativa (sexo, etnia y educación) =" `gini_yhat1'/`gini_ipcf'
-	di " D. de oportunidades relativa (sexo, etnia, educacion y region de nacimiento) =" `gini_yhat1'/`gini_ipcf'
+	di " D. de oportunidades relativa (sexo y etnia) =" `gini_yhat2'/`gini_ipcf'
+	di " D. de oportunidades relativa (sexo, etnia y educación) =" `gini_yhat3'/`gini_ipcf'
+	di " D. de oportunidades relativa (sexo, etnia, educacion y region de nacimiento) =" `gini_yhat4'/`gini_ipcf'
 
 	drop yhat1 yhat2 yhat3
 	rename yhat4 yhat
