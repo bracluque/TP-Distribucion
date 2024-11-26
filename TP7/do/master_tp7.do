@@ -21,7 +21,8 @@
 
   run "${dofile}\gcuan.do"
   run "${dofile}\fgt-libro.do"
-
+  run "${dofile}\gini-libro.do"
+	
   
 
 * Importamos la base
@@ -75,6 +76,10 @@ do "${dofile}\sim-secc.do" "secc1" 18 40
 
 do "${dofile}\rep-cic.do" "secc1" ipcf ipcf_secc1
 
+gen lipcf = ln(ipcf)
+gen lipcf_secc1 = ln(ipcf_secc1)
+twoway (kdensity lipcf if ocup!=1) (kdensity lipcf_secc1 if ocup!=1, lwidth(medium) lcolor(red) ), xline(11.74, lcolor(black)) legend(label(1 "Original") label(2 "Modificado")) xtitle("Logaritmo de salario") ytitle("Densidad")
+
 graph export "${output}\grafico_secc1.png", as(png) replace
 
 
@@ -84,6 +89,28 @@ do "${dofile}\sim-secc.do" "secc2" 18 60
 
 do "${dofile}\rep-cic.do" "secc2" ipcf ipcf_secc2
 
+* Ordeno
+sort ipcf, stable
+
+
+* Genero suma de la población en base al ponderador
+gen sumpop = sum(pondih)
+
+* Genero un share de la población
+gen shrpop = sumpop/sumpop[_N]
+
+* Genero suma de la totalidad de ingresos ponderado por PONDIH
+gen suminc = sum(ipcf*pondih)
+gen suminc2 = sum(ipcf_secc2*pondih)
+
+* Genero un share de ingresos
+gen shrinc = suminc/suminc[_N]
+gen shrinc2 = suminc2/suminc2[_N]
+
+
+* CURVA DE LORENZ
+twoway (line shrpop shrpop) (line shrinc shrpop) (line shrinc2 shrpop), legend(label(2 "Original") label(3 "Modificado") title("Curva de Lorenz"))
+
 graph export "${output}\grafico_secc2.png", as(png) replace
 
 * 2.c
@@ -91,7 +118,8 @@ do "${dofile}\sim-secc.do" "secc3" 18 80
 
 do "${dofile}\rep-cic.do" "secc3" ipcf ipcf_secc3
 
-graph export "${output}\grafico_secc3.png", as(png) replace
+gini ipcf [w=pondih] if ipcf>0
+gini ipcf_secc3 [w=pondih] if ipcf>0
 
 * 2.d
 do "${dofile}\sim-secc.do" "secc4" 18 999
@@ -100,7 +128,6 @@ do "${dofile}\rep-cic.do" "secc4" ipcf ipcf_secc4
 
 graph export "${output}\grafico_secc4.png", as(png) replace
 
-  
 *### Punto 3 --------------------------------------------------------
 
 
