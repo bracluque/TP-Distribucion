@@ -75,7 +75,7 @@ rename (ocupdum_sim?) (ocupdum?)
 
 
 * compute labor income
-include "C:\Users\Emiliano\Documents\FCE - UNLP\Economia de la Distribucion\TP-Distribucion\TP7\do\genera-ing-laboral.doi" 
+include "${dofile}\genera-ing-laboral.doi" 
 
 
 
@@ -101,7 +101,7 @@ rename (ocupdum?_aux) (ocupdum?)
 
 
 * compute household income 
-include "C:\Users\Emiliano\Documents\FCE - UNLP\Economia de la Distribucion\TP-Distribucion\TP7\do\genera-ing-familiar.doi" 
+include "${dofile}\genera-ing-familiar.doi" 
 
 
 

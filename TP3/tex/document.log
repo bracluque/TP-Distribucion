@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.22)  12 NOV 2024 14:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.22)  21 NOV 2024 07:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -678,13 +678,13 @@ Package hyperref Info: Link coloring OFF on input line 72.
 \@outlinefile=\write5
 \openout5 = `document.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 93.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 92.
 
 
 (C:\Users\bracl\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 93.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 92.
 
 
 (C:\Users\bracl\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -697,7 +697,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -709,7 +709,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -721,7 +721,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -733,7 +733,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -745,7 +745,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -757,7 +757,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -769,7 +769,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -781,7 +781,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -793,7 +793,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -805,7 +805,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -817,7 +817,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -829,7 +829,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -841,7 +841,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -853,7 +853,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -865,7 +865,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -877,7 +877,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -889,7 +889,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -901,7 +901,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -913,7 +913,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -925,7 +925,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -937,7 +937,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -949,7 +949,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -961,7 +961,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -973,13 +973,13 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+l.92 	\begin{tabular}{l*{6}{D{.}{.}{-1}}}
                                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: File `presion_cigar.png' not found on input line 130.
+LaTeX Warning: File `presion_cigar.png' not found on input line 129.
 
 
 ! Package pdftex.def Error: File `presion_cigar.png' not found: using draft set
@@ -989,7 +989,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.130 ...ics[width=1\linewidth]{presion_cigar.png}
+l.129 ...ics[width=1\linewidth]{presion_cigar.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -999,10 +999,10 @@ Package caption Warning: \label without proper reference on input line 131.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:4A' on page 1 undefined on input line 134.
+LaTeX Warning: Reference `fig:4A' on page 1 undefined on input line 133.
 
 
-LaTeX Warning: File `concentracion_cigar.png' not found on input line 138.
+LaTeX Warning: File `concentracion_cigar.png' not found on input line 137.
 
 
 ! Package pdftex.def Error: File `concentracion_cigar.png' not found: using dra
@@ -1012,7 +1012,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.138 ...=0.75\linewidth]{concentracion_cigar.png}
+l.137 ...=0.75\linewidth]{concentracion_cigar.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1022,10 +1022,10 @@ Package caption Warning: \label without proper reference on input line 139.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:4B' on page 1 undefined on input line 142.
+LaTeX Warning: Reference `fig:4B' on page 1 undefined on input line 141.
 
 
-LaTeX Warning: File `presion_alcohol.png' not found on input line 152.
+LaTeX Warning: File `presion_alcohol.png' not found on input line 151.
 
 
 ! Package pdftex.def Error: File `presion_alcohol.png' not found: using draft s
@@ -1035,24 +1035,24 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.152 ...s[width=1\linewidth]{presion_alcohol.png}
+l.151 ...s[width=1\linewidth]{presion_alcohol.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[1
-
-{C:/Users/bracl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-[3]
 
 Package caption Warning: \label without proper reference on input line 153.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:5A' on page 4 undefined on input line 156.
+LaTeX Warning: Reference `fig:5A' on page 1 undefined on input line 155.
 
+[1
 
-LaTeX Warning: File `concentracion_alcohol.png' not found on input line 160.
+{C:/Users/bracl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+[3] [4]
+
+LaTeX Warning: File `concentracion_alcohol.png' not found on input line 159.
 
 
 ! Package pdftex.def Error: File `concentracion_alcohol.png' not found: using d
@@ -1062,7 +1062,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.160 ....75\linewidth]{concentracion_alcohol.png}
+l.159 ....75\linewidth]{concentracion_alcohol.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1072,10 +1072,10 @@ Package caption Warning: \label without proper reference on input line 161.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:5B' on page 4 undefined on input line 164.
+LaTeX Warning: Reference `fig:5B' on page 5 undefined on input line 163.
 
 
-LaTeX Warning: File `presion_formal.png' not found on input line 174.
+LaTeX Warning: File `presion_formal.png' not found on input line 173.
 
 
 ! Package pdftex.def Error: File `presion_formal.png' not found: using draft se
@@ -1085,7 +1085,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.174 ...cs[width=1\linewidth]{presion_formal.png}
+l.173 ...cs[width=1\linewidth]{presion_formal.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1095,10 +1095,11 @@ Package caption Warning: \label without proper reference on input line 175.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:6A' on page 4 undefined on input line 178.
+LaTeX Warning: Reference `fig:6A' on page 5 undefined on input line 177.
 
+[5] [6]
 
-LaTeX Warning: File `concentracion_formal.png' not found on input line 182.
+LaTeX Warning: File `concentracion_formal.png' not found on input line 181.
 
 
 ! Package pdftex.def Error: File `concentracion_formal.png' not found: using dr
@@ -1108,7 +1109,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.182 ...0.75\linewidth]{concentracion_formal.png}
+l.181 ...0.75\linewidth]{concentracion_formal.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1118,13 +1119,13 @@ Package caption Warning: \label without proper reference on input line 183.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:6B' on page 4 undefined on input line 186.
+LaTeX Warning: Reference `fig:6B' on page 7 undefined on input line 185.
 
 
 Package caption Warning: Unused \captionsetup[sub] on input line 24.
 See the caption package documentation for explanation.
 
-[4] [5] [6] [7] [8] (document.aux
+[7] (document.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
@@ -1136,17 +1137,20 @@ L3 programming layer <2024-01-04>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 15961 strings out of 474486
- 259664 string characters out of 5743754
- 1943542 words of memory out of 5000000
+ 15960 strings out of 474486
+ 259658 string characters out of 5743754
+ 1944542 words of memory out of 5000000
  37966 multiletter control sequences out of 15000+600000
  566585 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,79p,733b,492s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,9n,79p,733b,465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/bracl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Users/bracl/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb><C:/Users/bracl/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -1159,9 +1163,9 @@ ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/br
 acl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/
 Users/bracl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10
 .pfb>
-Output written on document.pdf (8 pages, 133076 bytes).
+Output written on document.pdf (7 pages, 132131 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
+ 110 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

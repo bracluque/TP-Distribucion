@@ -35,7 +35,7 @@ gcuan welf0 [w=pondiio], n(100) g(percentile)
 //xtile percentile = welf0 [w=pondiio], nq(100)
 
 
-table percentile [w=pondiio], c(mean welf0 mean welf1) replace
+version 16: table percentile [w=pondiio], c(mean welf0 mean welf1) replace
 
 gen `v1'xp = 100 * (table2/table1 - 1)
 

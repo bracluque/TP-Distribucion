@@ -24,12 +24,12 @@
 	
 *	Set working directory
 	
-	global cwd  	= "C:\Users\Agustin\Documents\2024\UNLP\Economía de la Distribución\TP6" 
-
+*	global cwd  	= "C:\Users\Agustin\Documents\2024\UNLP\Economía de la Distribución\TP6" 
+	global cwd  	= "D:\UNLP_Maeco\Distribucion\TP-Distribucion\TP6" 
 *	Globals
 
 	global data 	= "${cwd}\data"
-	global output	= "${cwd}\outputs"
+	global output	= "${cwd}\output"
 	global dofile 	= "${cwd}\do"
 
 
